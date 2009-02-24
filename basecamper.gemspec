@@ -5,9 +5,9 @@ spec = Gem::Specification.new do |s|
   # The summary of my gem.
   s.summary = "Command line interface to tracking time on Basecamp."
   
-  s.author = "Eric Mill"
-  s.email = "kprojection@gmail.com"
-  s.homepage = "http://github.com/Klondike/basecamper/"
+  s.author = "Brandon D. Valentine"
+  s.email = "brandon@brandonvalentine.com"
+  s.homepage = "http://github.com/brandonvalentine/basecamper/"
 
   s.files = ['README', 'LICENSE', 'bin/track', 'lib/basecamp.rb', 'lib/basecamper.rb']
   s.require_path = 'lib'
