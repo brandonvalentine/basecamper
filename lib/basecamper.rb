@@ -63,11 +63,11 @@ class Basecamper
     write_config("start_time" => nil, "minutes_logged" => minutes_elapsed)
   end
   
-  def log_time(duration, message, project = nil)
+  def log_time(duration, message, project = nil, date = Time.now)
     project_id = project_id(project || current_project)
     return unless project_id
     
-    save @basecamp.log_time(project_id, @person_id, Time.now, duration, message)
+    save @basecamp.log_time(project_id, @person_id, date, duration, message)
   end
   
   def delete_time(time_id = nil)
