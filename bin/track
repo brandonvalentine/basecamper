@@ -80,7 +80,7 @@ def log
   
   message = ARGV.shift
   project = project_name(ARGV.shift)
-  date = mydate(ARGV.shift)
+  date = log_date(ARGV.shift)
   
   if time = tracker.log_time(duration, message, project, date)
     puts "Logged time:"
@@ -239,9 +239,9 @@ def project_name(fragment)
   tracker.projects.values.find {|name| name == fragment or name =~ /^#{fragment}/i}
 end
 
-def mydate(date)
-  return if date.blank? or !date.to_time?
-  date.to_time
+def log_date(date)
+  return Time.now if date.blank?
+  Date.parse(date,true)
 end
 
 def variables!
